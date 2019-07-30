@@ -14,7 +14,7 @@ A common need for data binding is manipulating an element's class list and its i
 We can pass an object to `v-bind:class` to dynamically toggle classes:
 
 ``` html
-<div v-bind:class="{ active: isActive }"></div>
+<div v-bind:class="{ 'active': isActive }"></div>
 ```
 
 The above syntax means the presence of the `active` class will be determined by the [truthiness](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) of the data property `isActive`.
@@ -24,7 +24,7 @@ You can have multiple classes toggled by having more fields in the object. In ad
 ``` html
 <div
   class="static"
-  v-bind:class="{ active: isActive, 'text-danger': hasError }"
+  v-bind:class="{ 'active': isActive, 'text-danger': hasError }"
 ></div>
 ```
 
@@ -110,7 +110,7 @@ This will always apply `errorClass`, but will only apply `activeClass` when `isA
 However, this can be a bit verbose if you have multiple conditional classes. That's why it's also possible to use the object syntax inside array syntax:
 
 ``` html
-<div v-bind:class="[{ active: isActive }, errorClass]"></div>
+<div v-bind:class="[{ 'active': isActive }, errorClass]"></div>
 ```
 
 ### With Components
@@ -142,7 +142,7 @@ The rendered HTML will be:
 The same is true for class bindings:
 
 ``` html
-<my-component v-bind:class="{ active: isActive }"></my-component>
+<my-component v-bind:class="{ 'active': isActive }"></my-component>
 ```
 
 When `isActive` is truthy, the rendered HTML will be:
